@@ -1,0 +1,19 @@
+
+aside{flex-basis:100%;
+    flex-flow: row wrap;
+    background-color: lightcoral;
+}
+
+main{flex-basis: 100%;
+    flex-flow: row wrap;
+background-color: olivedrab;}
+
+.card{width:100px;
+height: 200px;
+line-height: 200px;
+background-color: peachpuff;
+flex-basis: row wrap;
+margin:auto;
+}
+
+.flexBox{display: flex;}

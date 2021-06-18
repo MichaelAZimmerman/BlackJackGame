@@ -7,6 +7,7 @@ let faceList = ["jack", "king", "queen"]
 let wins = 0;
 let losses = 0;
 let ties = 0;
+let gameRunning = false;
 
 for (i = 0; i < 4; i++) {
     for (let j = 2; j <= 10; j++) {
@@ -34,56 +35,85 @@ function deal(hand) {
         refill();
     }
     hand.push(deck.pop())
-    if (checkScore(hand) > 21){
-        endGame()
+    if (checkScore(pHand) > 21) {
+        endGame();
+    }
+    if (checkScore(hand) === 21) {
+        endGame();
     }
 }
 
 function discard() {
     while (cHand.length > 0) {
-        discardPile.push(cHand.pop())
+        discardPile.push(cHand.pop());
     }
     while (pHand.length > 0) {
-        discardPile.push(pHand.pop())
+        discardPile.push(pHand.pop());
     }
 }
 
 function refill() {
     while (discardPile.length > 0) {
-        deck.push(discardPile.pop())
+        deck.push(discardPile.pop());
     }
     shuffle(deck);
 }
 
 function checkScore(hand) {
     let total = 0;
-    for (let i= 0; i < hand.length; i++){
-    total += hand[i].value}
+    for (let i = 0; i < hand.length; i++) {
+        total += hand[i].value
+    }
     return total;
 }
 
-function compTurn(){
-    while (checkScore(cHand) < 17){
-        deal(cHand)
+function compTurn() {
+    while (checkScore(cHand) < 17) {
+        deal(cHand);
     }
-    compareScore();
+    endGame();
 }
 
-function compareScore(){
-    if (checkScore(cHand) == checkScore(pHand)){
+function compareScore() {
+    if (checkScore(cHand) == checkScore(pHand)) {
         ties++;
-    } else if (checkScore(cHand) > checkScore(pHand)){
+        gameRunning = false;
+    } else if (checkScore(cHand) > checkScore(pHand)) {
         losses++;
-    } else{
-    wins++;}
+        gameRunning = false;
+    } else {
+        wins++;
+        gameRunning = false;
+    }
 }
 
-function endGame(){
-    if (checkScore(pHand) > 21){
+function endGame() {
+    if (checkScore(pHand) > 21) {
         losses++;
+        gameRunning = false;
     }
-    else{
+    else if (checkScore(cHand) > 21) {
         wins++;
+        gameRunning = false;
     }
-    
+    else {
+        compareScore();
+    }
+
+
+}
+
+function startGame() {
+    if (gameRunning == false) {
+        discard();
+        refill();
+        gameRunning = true;
+        deal(pHand);
+        deal(cHand);
+        deal(pHand);
+        if (gameRunning === true) {
+            deal(cHand);
+        }
+
+    }
 }
