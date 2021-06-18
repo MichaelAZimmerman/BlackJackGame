@@ -1,4 +1,6 @@
 
+header{background-color: rosybrown;}
+
 aside{flex-basis:100%;
     flex-flow: row wrap;
     background-color: lightcoral;
@@ -16,4 +18,5 @@ flex-basis: row wrap;
 margin:auto;
 }
 
-.flexBox{display: flex;}
+.flexBox{display: flex;
+flex-flow: row wrap;}
