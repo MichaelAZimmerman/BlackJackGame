@@ -4,6 +4,9 @@ let pHand = [];
 let cHand = [];
 let suitList = ["club", "heart", "diamond", "spade"]
 let faceList = ["jack", "king", "queen"]
+let wins = 0;
+let losses = 0;
+let ties = 0;
 
 for (i = 0; i < 4; i++) {
     for (let j = 2; j <= 10; j++) {
@@ -31,6 +34,9 @@ function deal(hand) {
         refill();
     }
     hand.push(deck.pop())
+    if (checkScore(hand) > 21){
+        endGame()
+    }
 }
 
 function discard() {
@@ -53,5 +59,31 @@ function checkScore(hand) {
     let total = 0;
     for (let i= 0; i < hand.length; i++){
     total += hand[i].value}
-    return;
+    return total;
+}
+
+function compTurn(){
+    while (checkScore(cHand) < 17){
+        deal(cHand)
+    }
+    compareScore();
+}
+
+function compareScore(){
+    if (checkScore(cHand) == checkScore(pHand)){
+        ties++;
+    } else if (checkScore(cHand) > checkScore(pHand)){
+        losses++;
+    } else{
+    wins++;}
+}
+
+function endGame(){
+    if (checkScore(pHand) > 21){
+        losses++;
+    }
+    else{
+        wins++;
+    }
+    
 }
