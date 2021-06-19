@@ -122,6 +122,11 @@ function startGame() {
             let hitMeText = document.createTextNode("Hit");
             hitMe.appendChild(hitMeText);
             document.getElementById("buttonArea").appendChild(hitMe);
+            hitMe.setAttribute('id','hitMeButton');
+            
+            document.getElementById("hitMeButton").addEventListener("click", function () {
+                alert("hit me");
+            })
 
             let linebr = document.createElement("br");
             document.getElementById("buttonArea").appendChild(linebr);
@@ -130,6 +135,11 @@ function startGame() {
             let stayText = document.createTextNode("Stay");
             stay.appendChild(stayText);
             document.getElementById("buttonArea").appendChild(stay);
+            stay.setAttribute('id','stayButton');
+
+            document.getElementById("stayButton").addEventListener("click", function () {
+                alert("stay");
+            })
 
         }
         for (i = 0; i < pHand.length; i++) {
