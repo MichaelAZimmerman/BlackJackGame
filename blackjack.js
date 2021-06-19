@@ -65,6 +65,7 @@ function checkScore(hand) {
     for (let i = 0; i < hand.length; i++) {
         total += hand[i].value
     }
+    
     return total;
 }
 
@@ -89,18 +90,21 @@ function compareScore() {
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
         startButton.style.display = "block";
+        document.getElementById("ties").innerText = ties;
     } else if (checkScore(cHand) > checkScore(pHand)) {
         losses++;
         gameRunning = false;
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
         startButton.style.display = "block";
+        document.getElementById("losses").innerText = losses;
     } else {
         wins++;
         gameRunning = false;
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
         startButton.style.display = "block";
+        document.getElementById("wins").innerText = wins;
     }
 }
 
@@ -111,6 +115,7 @@ function endGame() {
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
         startButton.style.display = "block";
+        document.getElementById("losses").innerText = losses;
     }
     else if (checkScore(cHand) > 21) {
         wins++;
@@ -118,6 +123,7 @@ function endGame() {
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
         startButton.style.display = "block";
+        document.getElementById("wins").innerText = wins;
     }
     else {
         compareScore();
