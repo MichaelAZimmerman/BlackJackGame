@@ -70,11 +70,13 @@ function checkScore(hand) {
 function compTurn() {
     while (checkScore(cHand) < 17) {
         deal(cHand);
+        for (i = cHand.length - 1; i < cHand.length; i++) {
         let cpuCard = document.createElement("div");
         let cardInfo = document.createTextNode(cHand[i].face + " of " + cHand[i].suit + "s");
         cpuCard.appendChild(cardInfo);
         cpuCard.classList.add("card")
         document.getElementById("cpuCards").appendChild(cpuCard);
+        }
     }
     endGame();
 }
@@ -141,11 +143,13 @@ function startGame() {
 
             document.getElementById("hitMeButton").addEventListener("click", function () {
                 deal(pHand);
+                for (i = pHand.length - 1; i < pHand.length; i++) {
                 let playerCard = document.createElement("div");
                 let cardInfo = document.createTextNode(pHand[i].face + " of " + pHand[i].suit + "s");
                 playerCard.appendChild(cardInfo);
                 playerCard.classList.add("card")
                 document.getElementById("playerCards").appendChild(playerCard);
+                }
             })
 
             let linebr = document.createElement("br");
