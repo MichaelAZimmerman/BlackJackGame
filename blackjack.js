@@ -8,6 +8,7 @@ let wins = 0;
 let losses = 0;
 let ties = 0;
 let gameRunning = false;
+let startButton = document.getElementById("startGame");
 
 for (i = 0; i < 4; i++) {
     for (let j = 2; j <= 10; j++) {
@@ -87,16 +88,19 @@ function compareScore() {
         gameRunning = false;
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
+        startButton.style.display = "block";
     } else if (checkScore(cHand) > checkScore(pHand)) {
         losses++;
         gameRunning = false;
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
+        startButton.style.display = "block";
     } else {
         wins++;
         gameRunning = false;
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
+        startButton.style.display = "block";
     }
 }
 
@@ -106,12 +110,14 @@ function endGame() {
         gameRunning = false;
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
+        startButton.style.display = "block";
     }
     else if (checkScore(cHand) > 21) {
         wins++;
         gameRunning = false;
         const node = document.getElementById("buttonArea");
         node.querySelectorAll('*').forEach(n => n.remove());
+        startButton.style.display = "block";
     }
     else {
         compareScore();
@@ -126,6 +132,9 @@ function startGame() {
         node.querySelectorAll('*').forEach(n => n.remove());
         const nodetwo = document.getElementById("playerCards");
         nodetwo.querySelectorAll('*').forEach(n => n.remove());
+
+        startButton.style.display = "none";
+
         gameRunning = true;
         discard();
         refill();
@@ -186,5 +195,6 @@ function startGame() {
 
 document.getElementById('startGame').addEventListener("click", function () {
     if(gameRunning === false){
-    startGame();}
+    startGame();
+    }
 })
