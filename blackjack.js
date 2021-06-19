@@ -117,3 +117,8 @@ function startGame() {
 
     }
 }
+
+document.getElementById('startGame').addEventListener("click", function () {
+    const node = document.getElementById("cpuCards");
+    node.querySelectorAll('*').forEach(n => n.remove());
+})
