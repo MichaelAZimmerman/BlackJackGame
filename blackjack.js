@@ -104,7 +104,7 @@ function endGame() {
 }
 
 function startGame() {
-    if (gameRunning == false) {
+    if (gameRunning === false) {
         gameRunning = true;
         discard();
         refill();
@@ -114,6 +114,19 @@ function startGame() {
         
         if (gameRunning === true) {
             deal(cHand);
+            let hitMe = document.createElement("button");
+            let hitMeText = document.createTextNode("Hit");
+            hitMe.appendChild(hitMeText);
+            document.getElementById("buttonArea").appendChild(hitMe);
+
+            let linebr = document.createElement("br");
+            document.getElementById("buttonArea").appendChild(linebr);
+
+            let stay = document.createElement("button");
+            let stayText = document.createTextNode("Stay");
+            stay.appendChild(stayText);
+            document.getElementById("buttonArea").appendChild(stay);
+
         }
         for (i = 0; i < pHand.length; i++) {
             let playerCard = document.createElement("div");
@@ -122,6 +135,14 @@ function startGame() {
             playerCard.classList.add("card")
             document.getElementById("playerCards").appendChild(playerCard);
         }
+        for (i = 0; i < cHand.length; i++) {
+            let cpuCard = document.createElement("div");
+            let cardInfo = document.createTextNode(cHand[i].face + " of " + cHand[i].suit + "s");
+            cpuCard.appendChild(cardInfo);
+            cpuCard.classList.add("card")
+            document.getElementById("cpuCards").appendChild(cpuCard);
+        }
+
     }
 }
 

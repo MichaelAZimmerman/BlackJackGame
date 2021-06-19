@@ -9,7 +9,8 @@ flex-flow: row wrap;}
 .flexFifty{flex-basis: 50%;
 flex-flow: row wrap;}
 
-aside{flex-basis:100%;
+aside{display:flex;
+    flex-basis:100%;
     flex-flow: row wrap;
     background-color: lightcoral;
     min-height: 100px;
@@ -53,4 +54,10 @@ justify-content: space-evenly;}
     flex-basis: 80%;
     flex-flow: row wrap;
     min-height: 250px;
+}
+button{
+    font-weight: 700;
+    background-color: sandybrown;
+    border-radius: 10px 10px 10px 10px;
+    margin: 5px auto;
 }
