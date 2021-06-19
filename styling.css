@@ -28,6 +28,7 @@ background-color: peachpuff;
 flex-basis: row wrap;
 margin:5px auto;
 border-radius: 15px 15px 15px 15px;
+text-align: center;
 }
 
 .flexBox{display: flex;
@@ -46,4 +47,10 @@ justify-content: space-evenly;}
 .cpuName{
     flex-basis: 20%;
     flex-flow: row wrap;
+}
+
+.flexCards{
+    flex-basis: 80%;
+    flex-flow: row wrap;
+    min-height: 250px;
 }

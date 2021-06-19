@@ -105,20 +105,30 @@ function endGame() {
 
 function startGame() {
     if (gameRunning == false) {
+        gameRunning = true;
         discard();
         refill();
-        gameRunning = true;
         deal(pHand);
         deal(cHand);
         deal(pHand);
+        
         if (gameRunning === true) {
             deal(cHand);
         }
-
+        for (i = 0; i < pHand.length; i++) {
+            let playerCard = document.createElement("div");
+            let cardInfo = document.createTextNode(pHand[i].face + " of " + pHand[i].suit + "s");
+            playerCard.appendChild(cardInfo);
+            playerCard.classList.add("card")
+            document.getElementById("playerCards").appendChild(playerCard);
+        }
     }
 }
 
 document.getElementById('startGame').addEventListener("click", function () {
     const node = document.getElementById("cpuCards");
     node.querySelectorAll('*').forEach(n => n.remove());
+    const nodetwo = document.getElementById("playerCards");
+    nodetwo.querySelectorAll('*').forEach(n => n.remove());
+    startGame();
 })

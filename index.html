@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styling.css"></link>
+    <link rel="stylesheet" href="./styling.css">
+    </link>
 </head>
+
 <body>
     <header class="textCenter flexBox">
         <div class="textXl flexFifty">Blackjack</div>
         <div class="flexFifty flexBox">
-        <div class="flexChild">Wins : <span id="wins">0</span></div>
-        <div class="flexChild">Losses : <span id="wins">0</span></div>
-        <div class="flexChild">Ties : <span id="wins">0</span></div>
+            <div class="flexChild">Wins : <span id="wins">0</span></div>
+            <div class="flexChild">Losses : <span id="wins">0</span></div>
+            <div class="flexChild">Ties : <span id="wins">0</span></div>
         </div>
     </header>
     <div class="flexBox">
         <aside><button id="startGame">Start New Game</button></aside>
         <main class="flexBox">
-            <div class="flexBox flexFull" id="cpuCards"><div class="cpuName">CPU Cards</div>
+            <div class="flexBox flexFull">
+                <div class="cpuName">CPU Cards</div>
+                <div class="flexBox flexCards" id="cpuCards">
                 <div class="card">Card</div>
-                <div class="card">Card</div></div>
-                <div class="flexBox flexFull" id="playerCards"><div class="cpuName">Player Cards</div>
-                    <div class="card">Card</div>
-                    <div class="card">Card</div></div>
-        </main></div>
+                <div class="card">Card</div>
+                </div>
+            </div>
+            <div class="flexBox flexFull">
+                <div class="cpuName">Player Cards</div>
+                <div class="flexBox flexCards" id="playerCards">
+                <div class="card">Card</div>
+                <div class="card">Card</div>
+            </div>
+            </div>
+        </main>
+    </div>
     <script src="./blackjack.js"></script>
 </body>
+
 </html>
