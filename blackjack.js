@@ -65,7 +65,10 @@ function checkScore(hand) {
     for (let i = 0; i < hand.length; i++) {
         total += hand[i].value
     }
-    
+    for (let i = 0; i < hand.length; i++) {
+    if (total > 21 && hand[i].face === "ace"){
+        total = total - 10
+    }}
     return total;
 }
 
