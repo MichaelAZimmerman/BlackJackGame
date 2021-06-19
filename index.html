@@ -8,12 +8,23 @@
     <link rel="stylesheet" href="./styling.css"></link>
 </head>
 <body>
-    <header>BlackJack</header>
+    <header class="textCenter flexBox">
+        <div class="textXl flexFifty">Blackjack</div>
+        <div class="flexFifty flexBox">
+        <div class="flexChild">Wins : <span id="wins">0</span></div>
+        <div class="flexChild">Losses : <span id="wins">0</span></div>
+        <div class="flexChild">Ties : <span id="wins">0</span></div>
+        </div>
+    </header>
     <div class="flexBox">
-        <aside>Aside</aside>
-        <main class="flexBox">Main
-            <div class="card">Card</div>
-            <div class="card">Card</div>
+        <aside><button id="startGame">Start New Game</button></aside>
+        <main class="flexBox">
+            <div class="flexBox flexFull">CPU Cards
+                <div class="card">Card</div>
+                <div class="card">Card</div></div>
+                <div class="flexBox flexFull">Player Cards
+                    <div class="card">Card</div>
+                    <div class="card">Card</div></div>
         </main></div>
     <script src="./blackjack.js"></script>
 </body>

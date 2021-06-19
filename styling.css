@@ -1,22 +1,42 @@
 
-header{background-color: rosybrown;}
+header{background-color: rosybrown;
+height: 100px;
+line-height: 100px;}
+
+.flexFull{flex-basis: 100%;
+flex-flow: row wrap;}
+
+.flexFifty{flex-basis: 50%;
+flex-flow: row wrap;}
 
 aside{flex-basis:100%;
     flex-flow: row wrap;
     background-color: lightcoral;
+    min-height: 100px;
 }
 
 main{flex-basis: 100%;
     flex-flow: row wrap;
-background-color: olivedrab;}
+background-color: olivedrab;
+min-height: 200px;}
 
 .card{width:100px;
 height: 200px;
 line-height: 200px;
 background-color: peachpuff;
 flex-basis: row wrap;
-margin:auto;
+margin:5px auto;
 }
 
 .flexBox{display: flex;
-flex-flow: row wrap;}
+flex-flow: row wrap;
+justify-content: space-evenly;}
+
+.flexChild{flex-flow: row wrap;}
+
+.textCenter{
+    text-align: center;
+}
+.textXl{
+    font-size: x-large;
+}
