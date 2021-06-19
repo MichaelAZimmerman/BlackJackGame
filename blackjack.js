@@ -105,13 +105,17 @@ function endGame() {
 
 function startGame() {
     if (gameRunning === false) {
+        const node = document.getElementById("cpuCards");
+        node.querySelectorAll('*').forEach(n => n.remove());
+        const nodetwo = document.getElementById("playerCards");
+        nodetwo.querySelectorAll('*').forEach(n => n.remove());
         gameRunning = true;
         discard();
         refill();
         deal(pHand);
         deal(cHand);
         deal(pHand);
-        
+
         if (gameRunning === true) {
             deal(cHand);
             let hitMe = document.createElement("button");
@@ -147,9 +151,5 @@ function startGame() {
 }
 
 document.getElementById('startGame').addEventListener("click", function () {
-    const node = document.getElementById("cpuCards");
-    node.querySelectorAll('*').forEach(n => n.remove());
-    const nodetwo = document.getElementById("playerCards");
-    nodetwo.querySelectorAll('*').forEach(n => n.remove());
     startGame();
 })
