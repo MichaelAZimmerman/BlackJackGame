@@ -70,6 +70,11 @@ function checkScore(hand) {
 function compTurn() {
     while (checkScore(cHand) < 17) {
         deal(cHand);
+        let cpuCard = document.createElement("div");
+        let cardInfo = document.createTextNode(cHand[i].face + " of " + cHand[i].suit + "s");
+        cpuCard.appendChild(cardInfo);
+        cpuCard.classList.add("card")
+        document.getElementById("cpuCards").appendChild(cpuCard);
     }
     endGame();
 }
@@ -78,12 +83,18 @@ function compareScore() {
     if (checkScore(cHand) == checkScore(pHand)) {
         ties++;
         gameRunning = false;
+        const node = document.getElementById("buttonArea");
+        node.querySelectorAll('*').forEach(n => n.remove());
     } else if (checkScore(cHand) > checkScore(pHand)) {
         losses++;
         gameRunning = false;
+        const node = document.getElementById("buttonArea");
+        node.querySelectorAll('*').forEach(n => n.remove());
     } else {
         wins++;
         gameRunning = false;
+        const node = document.getElementById("buttonArea");
+        node.querySelectorAll('*').forEach(n => n.remove());
     }
 }
 
@@ -91,10 +102,14 @@ function endGame() {
     if (checkScore(pHand) > 21) {
         losses++;
         gameRunning = false;
+        const node = document.getElementById("buttonArea");
+        node.querySelectorAll('*').forEach(n => n.remove());
     }
     else if (checkScore(cHand) > 21) {
         wins++;
         gameRunning = false;
+        const node = document.getElementById("buttonArea");
+        node.querySelectorAll('*').forEach(n => n.remove());
     }
     else {
         compareScore();
@@ -122,10 +137,15 @@ function startGame() {
             let hitMeText = document.createTextNode("Hit");
             hitMe.appendChild(hitMeText);
             document.getElementById("buttonArea").appendChild(hitMe);
-            hitMe.setAttribute('id','hitMeButton');
-            
+            hitMe.setAttribute('id', 'hitMeButton');
+
             document.getElementById("hitMeButton").addEventListener("click", function () {
-                alert("hit me");
+                deal(pHand);
+                let playerCard = document.createElement("div");
+                let cardInfo = document.createTextNode(pHand[i].face + " of " + pHand[i].suit + "s");
+                playerCard.appendChild(cardInfo);
+                playerCard.classList.add("card")
+                document.getElementById("playerCards").appendChild(playerCard);
             })
 
             let linebr = document.createElement("br");
@@ -135,10 +155,10 @@ function startGame() {
             let stayText = document.createTextNode("Stay");
             stay.appendChild(stayText);
             document.getElementById("buttonArea").appendChild(stay);
-            stay.setAttribute('id','stayButton');
+            stay.setAttribute('id', 'stayButton');
 
             document.getElementById("stayButton").addEventListener("click", function () {
-                alert("stay");
+                compTurn();
             })
 
         }
@@ -161,5 +181,6 @@ function startGame() {
 }
 
 document.getElementById('startGame').addEventListener("click", function () {
-    startGame();
+    if(gameRunning === false){
+    startGame();}
 })
