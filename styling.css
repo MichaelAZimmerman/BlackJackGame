@@ -82,6 +82,7 @@ button{
     border-radius: 10px 10px 10px 10px;
     margin: 5px auto;
     padding: 10px;
+    width: 120px;
 }
 .hideBtn{
     display: none;
