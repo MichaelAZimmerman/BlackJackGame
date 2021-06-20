@@ -11,6 +11,7 @@ let gameRunning = false;
 let startButton = document.getElementById("startGame");
 let hitButton = document.getElementById("hitMe");
 let stayButton = document.getElementById("stay");
+let infoBox = document.getElementById("infoBox");
 
 let dateBirth = prompt("Enter your birthday in MM/DD/YYYY format:");
 var dob = new Date(dateBirth);  
@@ -118,6 +119,7 @@ function compareScore() {
         stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("ties").innerText = ties;
+        infoBox.innerText = "You Tied! Play Again?"
     } else if (checkScore(cHand) > checkScore(pHand)) {
         losses++;
         gameRunning = false;
@@ -125,6 +127,7 @@ function compareScore() {
         stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("losses").innerText = losses;
+        infoBox.innerText = "You Lost! Play Again?"
     } else {
         wins++;
         gameRunning = false;
@@ -132,6 +135,7 @@ function compareScore() {
         stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("wins").innerText = wins;
+        infoBox.innerText = "You Win! Play Again?"
     }
 }
 
@@ -143,6 +147,7 @@ function endGame() {
         stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("losses").innerText = losses;
+        infoBox.innerText = "You Lost! Play Again?"
     }
     else if (checkScore(cHand) > 21) {
         wins++;
@@ -151,6 +156,7 @@ function endGame() {
         stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("wins").innerText = wins;
+        infoBox.innerText = "You Win! Play Again?"
     }
     else {
         compareScore();
@@ -167,6 +173,7 @@ function startGame() {
         nodetwo.querySelectorAll('*').forEach(n => n.remove());
 
         startButton.style.display = "none";
+        infoBox.innerText = "Hit or Stay?"
 
         gameRunning = true;
         discard();
@@ -177,6 +184,7 @@ function startGame() {
 
         if (gameRunning === true) {
             deal(cHand);
+            infoBox.innerText = "Hit or Stay?"
             startButton.style.display = "none";
             hitButton.style.display = "block";
 
