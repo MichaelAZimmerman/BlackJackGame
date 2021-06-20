@@ -155,6 +155,7 @@ function startGame() {
 
         if (gameRunning === true) {
             deal(cHand);
+            startButton.style.display = "none";
             hitButton.style.display = "block";
 
             stayButton.style.display = "block";
