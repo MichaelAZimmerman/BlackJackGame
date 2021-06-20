@@ -12,6 +12,14 @@ let startButton = document.getElementById("startGame");
 let hitButton = document.getElementById("hitMe");
 let stayButton = document.getElementById("stay");
 
+let age = prompt("What is your age?");
+let ageVerify = parseInt(age)
+if (ageVerify < 16){
+    window.location.href = "http://www.google.com";
+}
+
+let name = prompt("What is your first name?");
+
 for (i = 0; i < 4; i++) {
     for (let j = 2; j <= 10; j++) {
         deck.push({ value: j, suit: suitList[i], face: j })
