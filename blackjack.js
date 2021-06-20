@@ -44,6 +44,9 @@ for (i = 0; i < 4; i++) {
 }
 
 let firstName = prompt("What is your first name?");
+if (firstName === null || firstName === ""){
+    firstName = "Player"
+}
 document.getElementById("firstName").innerText = firstName;
 
 console.log(deck);
