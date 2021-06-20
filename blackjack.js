@@ -12,14 +12,24 @@ let startButton = document.getElementById("startGame");
 let hitButton = document.getElementById("hitMe");
 let stayButton = document.getElementById("stay");
 
-let age = prompt("What is your age?");
-let ageVerify = parseInt(age)
-if (ageVerify < 16){
+let dateBirth = prompt("Enter your birthday in MM/DD/YYYY format:");
+var dob = new Date(dateBirth);  
+    //calculate month difference from current date in time  
+    var month_diff = Date.now() - dob.getTime();  
+      
+    //convert the calculated difference in date format  
+    var age_dt = new Date(month_diff);   
+      
+    //extract year from date      
+    var year = age_dt.getUTCFullYear();  
+      
+    //now calculate the age of the user  
+    var age = Math.abs(year - 1970);  
+if (age < 16){
     window.location.href = "http://www.google.com";
 }
 
-let firstName = prompt("What is your first name?");
-document.getElementById("firstName").innerText = firstName;
+
 
 for (i = 0; i < 4; i++) {
     for (let j = 2; j <= 10; j++) {
@@ -31,6 +41,9 @@ for (i = 0; i < 4; i++) {
     deck.push({ value: 11, suit: suitList[i], face: "ace" })
 
 }
+
+let firstName = prompt("What is your first name?");
+document.getElementById("firstName").innerText = firstName;
 
 console.log(deck);
 shuffle(deck);
