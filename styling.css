@@ -27,6 +27,7 @@ aside{display:flex;
     min-height: 100px;
     padding-top: 10px;
     border-radius: 20px 20px 0px 0px;
+    border-right: 0px solid rgb(59, 59, 7);
 }
 
 main{flex-basis: 100%;
@@ -66,7 +67,9 @@ justify-content: space-evenly;}
     flex-flow: row wrap;
     padding-top: 110px;
 }
-
+.minHeight{
+    min-height: 0px;
+}
 .flexCards{
     flex-basis: 80%;
     flex-flow: row wrap;
@@ -96,7 +99,7 @@ button{
 .gameFrame{
     border: 5px solid rgb(59, 59, 7);
     border-radius: 25px 25px 25px 25px;
-    margin-top: 5px;
+    margin: 5px;
     font-weight: 500;
 }
 .allCards{
@@ -107,6 +110,9 @@ button{
 }
 
 @media (min-width: 666px) {
+    .minHeight{
+        min-height: 130px;
+    }
     .allCards{
         border-radius: 0px 20px 20px 0px;
     }
@@ -114,7 +120,8 @@ button{
         border-radius: 0px 0px 20px 0px;
     }
     aside{flex-basis: 20%;
-        border-radius: 20px 0px 0px 20px;}
+        border-radius: 20px 0px 0px 20px;
+        border-right: 3px solid rgb(59, 59, 7);}
     main{flex-basis: 80%;}
     .flexFiftyBreak{flex-basis: 25%;}
     .flexChild{flex-basis: 32%;}
