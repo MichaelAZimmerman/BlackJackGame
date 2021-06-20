@@ -18,7 +18,8 @@ if (ageVerify < 16){
     window.location.href = "http://www.google.com";
 }
 
-let name = prompt("What is your first name?");
+let firstName = prompt("What is your first name?");
+document.getElementById("firstName").innerText = firstName;
 
 for (i = 0; i < 4; i++) {
     for (let j = 2; j <= 10; j++) {
