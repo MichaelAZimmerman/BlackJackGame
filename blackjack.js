@@ -9,6 +9,8 @@ let losses = 0;
 let ties = 0;
 let gameRunning = false;
 let startButton = document.getElementById("startGame");
+let hitButton = document.getElementById("hitMe");
+let stayButton = document.getElementById("stay");
 
 for (i = 0; i < 4; i++) {
     for (let j = 2; j <= 10; j++) {
@@ -90,22 +92,22 @@ function compareScore() {
     if (checkScore(cHand) == checkScore(pHand)) {
         ties++;
         gameRunning = false;
-        const node = document.getElementById("buttonArea");
-        node.querySelectorAll('*').forEach(n => n.remove());
+        hitButton.style.display = "none";
+        stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("ties").innerText = ties;
     } else if (checkScore(cHand) > checkScore(pHand)) {
         losses++;
         gameRunning = false;
-        const node = document.getElementById("buttonArea");
-        node.querySelectorAll('*').forEach(n => n.remove());
+        hitButton.style.display = "none";
+        stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("losses").innerText = losses;
     } else {
         wins++;
         gameRunning = false;
-        const node = document.getElementById("buttonArea");
-        node.querySelectorAll('*').forEach(n => n.remove());
+        hitButton.style.display = "none";
+        stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("wins").innerText = wins;
     }
@@ -115,16 +117,16 @@ function endGame() {
     if (checkScore(pHand) > 21) {
         losses++;
         gameRunning = false;
-        const node = document.getElementById("buttonArea");
-        node.querySelectorAll('*').forEach(n => n.remove());
+        hitButton.style.display = "none";
+        stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("losses").innerText = losses;
     }
     else if (checkScore(cHand) > 21) {
         wins++;
         gameRunning = false;
-        const node = document.getElementById("buttonArea");
-        node.querySelectorAll('*').forEach(n => n.remove());
+        hitButton.style.display = "none";
+        stayButton.style.display = "none";
         startButton.style.display = "block";
         document.getElementById("wins").innerText = wins;
     }
@@ -153,35 +155,9 @@ function startGame() {
 
         if (gameRunning === true) {
             deal(cHand);
-            let hitMe = document.createElement("button");
-            let hitMeText = document.createTextNode("Hit");
-            hitMe.appendChild(hitMeText);
-            document.getElementById("buttonArea").appendChild(hitMe);
-            hitMe.setAttribute('id', 'hitMeButton');
+            hitButton.style.display = "block";
 
-            document.getElementById("hitMeButton").addEventListener("click", function () {
-                deal(pHand);
-                for (i = pHand.length - 1; i < pHand.length; i++) {
-                let playerCard = document.createElement("div");
-                let cardInfo = document.createTextNode(pHand[i].face + " of " + pHand[i].suit + "s");
-                playerCard.appendChild(cardInfo);
-                playerCard.classList.add("card")
-                document.getElementById("playerCards").appendChild(playerCard);
-                }
-            })
-
-            let linebr = document.createElement("br");
-            document.getElementById("buttonArea").appendChild(linebr);
-
-            let stay = document.createElement("button");
-            let stayText = document.createTextNode("Stay");
-            stay.appendChild(stayText);
-            document.getElementById("buttonArea").appendChild(stay);
-            stay.setAttribute('id', 'stayButton');
-
-            document.getElementById("stayButton").addEventListener("click", function () {
-                compTurn();
-            })
+            stayButton.style.display = "block";
 
         }
         for (i = 0; i < pHand.length; i++) {
@@ -206,4 +182,19 @@ document.getElementById('startGame').addEventListener("click", function () {
     if(gameRunning === false){
     startGame();
     }
+})
+
+document.getElementById("hitMe").addEventListener("click", function () {
+    deal(pHand);
+    for (i = pHand.length - 1; i < pHand.length; i++) {
+    let playerCard = document.createElement("div");
+    let cardInfo = document.createTextNode(pHand[i].face + " of " + pHand[i].suit + "s");
+    playerCard.appendChild(cardInfo);
+    playerCard.classList.add("card")
+    document.getElementById("playerCards").appendChild(playerCard);
+    }
+})
+
+document.getElementById("stay").addEventListener("click", function () {
+    compTurn();
 })
