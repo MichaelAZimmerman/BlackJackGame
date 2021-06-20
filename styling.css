@@ -1,14 +1,14 @@
 
 header{background-color: black;
     color: whitesmoke;
-height: 100px;
-line-height: 100px;}
+min-height: 100px;
+padding-top: 50px;}
 
 .flexFull{flex-basis: 100%;
 flex-flow: row wrap;}
 
 .flexFifty{flex-basis: 50%;
-flex-flow: wrap;}
+flex-flow: row wrap;}
 
 .flexFiftyBreak{flex-basis: 25%;
 flex-flow: row wrap;}
@@ -42,7 +42,7 @@ text-align: center;
 flex-flow: row wrap;
 justify-content: space-evenly;}
 
-.flexChild{flex-basis: 32%;}
+.flexChild{flex-basis: 100%;}
 
 .textCenter{
     text-align: center;
@@ -54,7 +54,7 @@ justify-content: space-evenly;}
 .cpuName{
     flex-basis: 20%;
     flex-flow: row wrap;
-    line-height: 220px;
+    padding-top: 110px;
 }
 
 .flexCards{
@@ -80,4 +80,5 @@ button{
     aside{flex-basis: 20%;}
     main{flex-basis: 80%;}
     .flexFiftyBreak{flex-basis: 25%;}
+    .flexChild{flex-basis: 32%;}
 }
