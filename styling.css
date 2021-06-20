@@ -43,7 +43,7 @@ font-size: small;
 font-weight: 700;
 background-color: peachpuff;
 flex-basis: row wrap;
-margin:15px auto;
+margin:5px auto;
 border: 5px solid black;
 border-radius: 15px 15px 15px 15px;
 text-align: center;
@@ -60,6 +60,7 @@ justify-content: space-evenly;}
 }
 .textXl{
     font-size: x-large;
+    line-height: 90px;
 }
 
 .cpuName{
@@ -127,7 +128,8 @@ button{
     .flexChild{flex-basis: 32%;}
     .card{
         height: 200px;
-        line-height: 200px;}
+        line-height: 200px;
+        margin:15px auto;}
     header{
         line-height: 85px;
         }
