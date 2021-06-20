@@ -1,5 +1,6 @@
 
-header{background-color: rosybrown;
+header{background-color: black;
+    color: whitesmoke;
 height: 100px;
 line-height: 100px;}
 
@@ -7,13 +8,17 @@ line-height: 100px;}
 flex-flow: row wrap;}
 
 .flexFifty{flex-basis: 50%;
+flex-flow: wrap;}
+
+.flexFiftyBreak{flex-basis: 25%;
 flex-flow: row wrap;}
 
 aside{display:flex;
     flex-basis:100%;
     flex-flow: row wrap;
-    background-color: lightcoral;
+    background-color: rgb(101, 170, 36);
     min-height: 100px;
+    padding-top: 10px;
 }
 
 main{flex-basis: 100%;
@@ -37,7 +42,7 @@ text-align: center;
 flex-flow: row wrap;
 justify-content: space-evenly;}
 
-.flexChild{flex-flow: row wrap;}
+.flexChild{flex-basis: 32%;}
 
 .textCenter{
     text-align: center;
@@ -59,13 +64,20 @@ justify-content: space-evenly;}
 }
 button{
     font-weight: 700;
-    background-color: sandybrown;
+    background-color: rgb(235, 199, 168);
     border-radius: 10px 10px 10px 10px;
     margin: 5px auto;
+    padding: 10px;
 }
 .hideBtn{
     display: none;
 }
 .bgGreen{
     background-color: yellowgreen;
+}
+
+@media (min-width: 666px) {
+    aside{flex-basis: 20%;}
+    main{flex-basis: 80%;}
+    .flexFiftyBreak{flex-basis: 25%;}
 }
