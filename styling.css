@@ -27,7 +27,8 @@ height: 200px;
 line-height: 200px;
 background-color: peachpuff;
 flex-basis: row wrap;
-margin:5px auto;
+margin:15px auto;
+border: 5px solid black;
 border-radius: 15px 15px 15px 15px;
 text-align: center;
 }
@@ -48,6 +49,7 @@ justify-content: space-evenly;}
 .cpuName{
     flex-basis: 20%;
     flex-flow: row wrap;
+    line-height: 220px;
 }
 
 .flexCards{
@@ -63,4 +65,7 @@ button{
 }
 .hideBtn{
     display: none;
+}
+.bgGreen{
+    background-color: yellowgreen;
 }
