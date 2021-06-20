@@ -26,7 +26,7 @@ var dob = new Date(dateBirth);
       
     //now calculate the age of the user  
     var age = Math.abs(year - 1970);  
-if (age < 16){
+if (age < 16 || dateBirth === null){
     window.location.href = "http://www.google.com";
 }
 
