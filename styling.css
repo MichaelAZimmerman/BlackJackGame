@@ -1,8 +1,15 @@
+body{
+    background-color: rgb(57, 79, 47);
+}
 
 header{background-color: black;
     color: whitesmoke;
 min-height: 100px;
-padding-top: 50px;}
+padding-top: 5px;
+border-radius: 25px 25px 25px 25px;
+margin-top: 5px;
+margin-left: 5px;
+margin-right: 5px;}
 
 .flexFull{flex-basis: 100%;
 flex-flow: row wrap;}
@@ -19,6 +26,7 @@ aside{display:flex;
     background-color: rgb(101, 170, 36);
     min-height: 100px;
     padding-top: 10px;
+    border-radius: 20px 20px 0px 0px;
 }
 
 main{flex-basis: 100%;
@@ -30,6 +38,8 @@ min-height: 500px;}
 width:125px;
 height: 75px;
 line-height: 75px;
+font-size: small;
+font-weight: 700;
 background-color: peachpuff;
 flex-basis: row wrap;
 margin:15px auto;
@@ -75,13 +85,34 @@ button{
 .bgGreen{
     background-color: yellowgreen;
 }
+.gameFrame{
+    border: 5px solid rgb(59, 59, 7);
+    border-radius: 25px 25px 25px 25px;
+    margin-top: 5px;
+}
+.allCards{
+    border-radius: 0px 0px 20px 20px;
+}
+.playerCards{
+    border-radius: 0px 0px 20px 20px;
+}
 
 @media (min-width: 666px) {
-    aside{flex-basis: 20%;}
+    .allCards{
+        border-radius: 0px 20px 20px 0px;
+    }
+    .playerCards{
+        border-radius: 0px 0px 20px 0px;
+    }
+    aside{flex-basis: 20%;
+        border-radius: 20px 0px 0px 20px;}
     main{flex-basis: 80%;}
     .flexFiftyBreak{flex-basis: 25%;}
     .flexChild{flex-basis: 32%;}
     .card{
         height: 200px;
         line-height: 200px;}
+    header{
+        line-height: 85px;
+        }
 }
