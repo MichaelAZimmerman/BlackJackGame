@@ -33,12 +33,12 @@ aside{display:flex;
 main{flex-basis: 100%;
     flex-flow: row wrap;
 background-color: olivedrab;
-min-height: 500px;}
+min-height: 300px;}
 
 .card{
 width:125px;
 height: 75px;
-line-height: 75px;
+line-height: 65px;
 font-size: small;
 font-weight: 700;
 background-color: peachpuff;
@@ -66,7 +66,7 @@ justify-content: space-evenly;}
 .cpuName{
     flex-basis: 20%;
     flex-flow: row wrap;
-    padding-top: 110px;
+    padding-top: 15px;
 }
 .minHeight{
     min-height: 0px;
@@ -74,7 +74,7 @@ justify-content: space-evenly;}
 .flexCards{
     flex-basis: 80%;
     flex-flow: row wrap;
-    min-height: 250px;
+    min-height: 100px;
 }
 button{
     font-weight: 700;
@@ -134,4 +134,7 @@ button{
     header{
         line-height: 85px;
         }
+    .cpuName{
+        padding-top: 105px;
+    }
 }
