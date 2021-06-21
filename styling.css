@@ -24,7 +24,7 @@ aside{display:flex;
     flex-basis:100%;
     flex-flow: column;
     background-color: rgb(101, 170, 36);
-    min-height: 100px;
+    min-height: 80px;
     
     border-radius: 20px 20px 0px 0px;
     border-right: 0px solid rgb(59, 59, 7);
