@@ -101,6 +101,15 @@ function checkScore(hand) {
 }
 
 function compTurn() {
+    const node = document.getElementById("cpuCards");
+    node.querySelectorAll('*').forEach(n => n.remove());
+    for (i = 0; i < cHand.length; i++) {
+        let cpuCard = document.createElement("div");
+        let cardInfo = document.createTextNode(cHand[i].face + " of " + cHand[i].suit + "s");
+        cpuCard.appendChild(cardInfo);
+        cpuCard.classList.add("card")
+        document.getElementById("cpuCards").appendChild(cpuCard);
+    }
     while (checkScore(cHand) < 17) {
         deal(cHand);
         for (i = cHand.length - 1; i < cHand.length; i++) {
@@ -203,7 +212,7 @@ function startGame() {
         }
         for (i = 0; i < cHand.length; i++) {
             let cpuCard = document.createElement("div");
-            let cardInfo = document.createTextNode(cHand[i].face + " of " + cHand[i].suit + "s");
+            let cardInfo = document.createTextNode("* hidden card *");
             cpuCard.appendChild(cardInfo);
             cpuCard.classList.add("card")
             document.getElementById("cpuCards").appendChild(cpuCard);
